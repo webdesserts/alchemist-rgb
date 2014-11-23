@@ -8,8 +8,7 @@ Usage
 
 ### Node
 
-By default alchemist-rgb is included in alchemist-common and consequently also
-included in the bundled version of alchemist.js.
+By default alchemist-rgb is included in `alchemist.common`.
 
 ```js
   var alchemist = require('alchemist-js')
