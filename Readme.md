@@ -3,6 +3,10 @@ RGB
 
 The official RGB color-space plugin for alchemist.js.
 
+This RGB implementation uses sRGB companding. There are other forms
+such as L\* and Gamma companding. If you would like to see these
+implemented, post an issue on github and I'll try to work it in.
+
 Usage
 -----
 
