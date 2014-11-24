@@ -21,7 +21,7 @@ If you are not using alchemist.common you can instead use this library directly
 ```js
   var alchemist = require('alchemist-js').create()
   var rgb = require('alchemist-rgb')
-  alchemist.use(rgb)
+  alchemist.use(rgb())
 ```
 
 ### Web
