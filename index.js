@@ -1,3 +1,22 @@
+/*
+ * Alchemist-rgb
+ *
+ * Author: Michael C. Mullins
+ * License: MIT
+ *
+ * This RGB implementation uses sRGB companding. There are other forms
+ * such as L* and Gamma companding. If you would like to see these
+ * implemented, post an issue on github and I'll try to work it in.
+ *
+ * Special thanks to Bruce Lindbloom not only for his color formulas
+ * but for his color converter as well, both of which played a major
+ * role in this module.
+ *
+ * You can find his site here:
+ * http://www.brucelindbloom.com/
+ *
+ */
+
 var inverseCompand = function inverseCompand (companded) {
   return (companded <= 0.04045) ? (companded / 12.92) : Math.pow((companded + 0.055) / 1.055, 2.4)
 }
