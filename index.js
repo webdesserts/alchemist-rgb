@@ -1,11 +1,12 @@
-module.exports = function rgb () {
-  var inverseCompand = function inverseCompand (companded) {
-    return (companded <= 0.04045) ? (companded / 12.92) : Math.pow((companded + 0.055) / 1.055, 2.4)
-  }
-  var compand = function compand (linear) {
-    return (linear <= 0.0031308) ? (linear * 12.92) : (1.055 * Math.pow(linear, 1.0 / 2.4) - 0.055)
-  }
+var inverseCompand = function inverseCompand (companded) {
+  return (companded <= 0.04045) ? (companded / 12.92) : Math.pow((companded + 0.055) / 1.055, 2.4)
+}
 
+var compand = function compand (linear) {
+  return (linear <= 0.0031308) ? (linear * 12.92) : (1.055 * Math.pow(linear, 1.0 / 2.4) - 0.055)
+}
+
+module.exports = function rgb () {
   return {
     name: 'rgb',
     to: { 'xyz': function (R, G, B) {
