@@ -4,12 +4,10 @@ var del = require('del')
 var series = require('run-sequence')
 var plugin = require('./')()
 
-config = { name: plugin.name }
-
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']))
 
 gulp.task('build:min', ['build:web'], function () {
-  return gulp.src('dist/alchemist-' + config.name + '.js')
+  return gulp.src('dist/alchemist-' + plugin.name + '.js')
   .pipe(g.uglify())
   .pipe(g.rename({ suffix: '.min' }))
   .pipe(gulp.dest('dist'))
@@ -19,9 +17,9 @@ gulp.task('build:web', function () {
   return gulp.src('index.js')
   .pipe(g.webpack({
     output: {
-      filename: 'alchemist-' + config.name + '.js',
+      filename: 'alchemist-' + plugin.name + '.js',
       libraryTarget: 'umd',
-      library: 'alchemist_' + config.name,
+      library: 'alchemist_' + plugin.name,
       sourcePrefix: ''
     }
   }))
