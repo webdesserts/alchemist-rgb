@@ -15,7 +15,7 @@ Usage
 By default alchemist-rgb is included in `alchemist.common`.
 
 ```js
-  var alchemist = require('alchemist-js').create()
+  var alchemist = require('alchemist-js')
   alchemist.use(alchemist.common())
   var color = alchemize.rgb(255,255,255)
 ```
@@ -23,7 +23,7 @@ By default alchemist-rgb is included in `alchemist.common`.
 If you are not using alchemist.common you can instead use this library directly
 
 ```js
-  var alchemist = require('alchemist-js').create()
+  var alchemist = require('alchemist-js')
   var rgb = require('alchemist-rgb')
   alchemist.use(rgb())
 ```
