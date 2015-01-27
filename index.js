@@ -28,6 +28,10 @@ var compand = function compand (linear) {
 module.exports = function rgb () {
   return {
     name: 'rgb',
+    limits: {
+      max: [255, 255, 255],
+      min: [0, 0, 0]
+    },
     to: { 'xyz': function (R, G, B) {
       var r = inverseCompand(R / 255)
       var g = inverseCompand(G / 255)
