@@ -4,7 +4,8 @@
   "description": "the official RGB plugin for Alchemist.js",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "gulp test",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
