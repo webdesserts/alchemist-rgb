@@ -29,7 +29,6 @@ describe('rgb', function () {
     })
   })
 
-
   describe('to xyz', function () {
     it('should convert', function () {
       expect(alchemist.rgb(50, 150, 200).xyz()).to.deep.eq([.2264, .2666, .5858])

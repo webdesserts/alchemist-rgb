@@ -18,7 +18,6 @@
  */
 
 module.exports = function rgb () {
-
   var inverseCompand = function inverseCompand (companded) {
     return (companded <= 0.04045) ? (companded / 12.92) : Math.pow((companded + 0.055) / 1.055, 2.4)
   }
@@ -39,7 +38,7 @@ module.exports = function rgb () {
       for (var row = 0; row < size; row++) {
         lr = row
         rr = size - row - 1
-        c = col+row
+        c = col + row
         if (c >= size) c -= size;
         left_product *= m[lr][c]
         right_product *= m[rr][c]
@@ -52,7 +51,7 @@ module.exports = function rgb () {
   }
 
   var invert3x3 = function invert3x3 (m) {
-    var im = [[],[],[]]
+    var im = [[], [], []]
     var scale = 1 / determinant3x3(m);
 
     im[0][0] =  scale * (m[2][2] * m[1][1] - m[2][1] * m[1][2]);
@@ -72,9 +71,9 @@ module.exports = function rgb () {
 
   var transformationMatrix = function computeMatrix (r, g, b, white) {
     var m = [
-      [r.x/r.y, g.x/g.y, b.x/b.y],
+      [r.x / r.y, g.x / g.y, b.x / b.y],
       [1.0, 1.0, 1.0],
-      [(1-r.x-r.y)/r.y, (1-g.x-g.y)/g.y, (1-b.x-b.y)/b.y]
+      [(1 - r.x - r.y) / r.y, (1 - g.x - g.y) / g.y, (1 - b.x - b.y) / b.y]
     ]
     var mi = invert3x3(m)
 
