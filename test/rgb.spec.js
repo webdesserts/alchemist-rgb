@@ -10,7 +10,7 @@ describe('rgb', function () {
     xyz = { name: 'xyz', to: {} }
     alchemist.use(rgb())
     alchemist.use(xyz)
-    var white = alchemist.BaseSpace.white
+    var white = alchemist.white
     ref_white = [white.X, white.Y, white.Z]
   })
 
