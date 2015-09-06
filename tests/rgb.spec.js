@@ -1,6 +1,5 @@
-var expect = require('chai').expect
-var Alchemist = require('alchemist-js')
-var rgb = require('../')
+import Alchemist from 'alchemist-js'
+import rgb from '../index.js'
 
 describe('rgb', function () {
   var alchemist, xyz, ref_white;

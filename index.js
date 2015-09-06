@@ -17,7 +17,7 @@
  *
  */
 
-module.exports = function rgb () {
+export default function rgb () {
   return function initializer (alchemist) {
     var inverseCompand = function inverseCompand (companded) {
       return (companded <= 0.04045) ? (companded / 12.92) : Math.pow((companded + 0.055) / 1.055, 2.4)
@@ -28,7 +28,7 @@ module.exports = function rgb () {
     }
 
     var determinant3x3 = function determinant3x3 (m) {
-      var left_product, right_product, lr, lc, rr, rc;
+      var left_product, right_product, lr, lc, rr, rc, c;
       var size = 3
       var left_diags = 0
       var right_diags = 0
